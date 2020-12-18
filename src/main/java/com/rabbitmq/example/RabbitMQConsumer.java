@@ -26,10 +26,10 @@ public class RabbitMQConsumer {
 
     boolean runInfinite = true;
     long lcount =0;
+    ArrayList<Long> al=new ArrayList<Long>();
     while (runInfinite) {
     	System.out.print("pull msg "+lcount+++" ");
         GetResponse response = channel.basicGet(queueName, autoAck);
-        ArrayList<Long> al=new ArrayList<Long>();
         if (response == null) {
             // No message retrieved.
         } else {
